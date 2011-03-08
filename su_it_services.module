@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * Implementation of hook_form_alter
+ *
+ */
+function su_it_services_form_alter(&$form, $form_state, $form_id) {
+
+  // Remove the "Request New Password" link from the login block
+  if ($form_id == 'user_login_block') {
+    unset($form['links']);
+  }
+
+  // Since people are only supposed to log in using WebAuth, hide
+  // the password change form
+  if ($form_id == 'user_profile_form') {
+    unset($form['account']['pass']);
+  }
+
+  /*
+   *  Once enabled this module cannot be disabled (unless you get to the database or use Drush)
+   *  So evil.
+   */
+
+  if ($form_id == 'system_modules') {
+    unset($form['status']['#options']['su_it_services']);
+  }
+
+  /*
+   *  Disable file directory path and temp directory changes. These are set during installation
+   *  and should not be changed.
+   *
+   */
+  if ($form_id == 'system_file_system_settings') {
+    unset($form['file_directory_path']);
+    unset($form['file_directory_temp']);
+  }
+}
+
