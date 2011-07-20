@@ -24,5 +24,21 @@ function su_it_services_form_alter(&$form, $form_state, $form_id) {
     unset($form['file_directory_path']);
     unset($form['file_directory_temp']);
   }
+
+
+  if (($form_id == 'system_themes_form') && !(variable_get('su_department_themes', 0))) {
+
+    // We store the department names here instead of the database so that when new themes
+    // are released, or older ones are retired, there is only one place that needs to be
+    // updated. 
+
+    $department_themes = array('stanford', 'stanford-admin');
+
+    foreach ($department_themes as $theme) {
+      // unset($form['stanford']);
+      unset($form['status']['#options'][$theme]);
+      unset($form['theme_default']['#options'][$theme]);
+    }
+  }
 }
 

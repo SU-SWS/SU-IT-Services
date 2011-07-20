@@ -1,6 +1,6 @@
 ; $Id: su_it_services.info
 name = Stanford University IT Services
-description = Miscellaneous functions to make the hosting service easier to use and manage
+description = Miscellaneous functions to make the hosting service easier to use and manage.
 package = Stanford
 core = "6.x"
 

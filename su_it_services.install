@@ -1,0 +1,16 @@
+<?php
+// $Id$
+
+/**
+ * @file
+ * The install file; creates and deletes any needed variables
+ *
+ */
+
+function su_it_services_install() {
+  variable_set('su_department_themes', 0);
+}
+
+function su_it_services_uninstall() {
+  variable_del('su_department_themes');
+}
