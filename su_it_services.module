@@ -1,41 +1,40 @@
 <?php
 
 /**
- * Implementation of hook_form_alter
+ * Implementation of hook_form_alter().
  *
  */
+
 function su_it_services_form_alter(&$form, $form_state, $form_id) {
 
-  /*
-   *  Once enabled this module cannot be disabled (unless you get to the database or use Drush)
-   *  So evil.
-   */
+  // Once enabled this module cannot be disabled (unless you get to the database or use Drush)
+  // So evil.
+  // Drush is run through the cli so we don't act if that's the interface being used
 
-  if ($form_id == 'system_modules') {
+  if (($form_id == 'system_modules') &&  (php_sapi_name() != 'cli')) {
     unset($form['status']['#options']['su_it_services']);
   }
 
-  /*
-   *  Disable file directory path and temp directory changes. These are set during installation
-   *  and should not be changed.
-   *
-   */
-  if ($form_id == 'system_file_system_settings') {
+  // Disable file directory path and temp directory changes. These are set during installation
+  // and should not be changed.
+
+if ($form_id == 'system_file_system_settings') {
     unset($form['file_directory_path']);
     unset($form['file_directory_temp']);
   }
 
+  // only act if this is the theme page and department themes are disabled
 
   if (($form_id == 'system_themes_form') && !(variable_get('su_department_themes', 0))) {
 
     // We store the department names here instead of the database so that when new themes
     // are released, or older ones are retired, there is only one place that needs to be
-    // updated. 
+    // updated.
 
     $department_themes = array('stanford', 'stanford-admin');
 
+    // Disable the enable and default buttons for each department theme
     foreach ($department_themes as $theme) {
-      // unset($form['stanford']);
       unset($form['status']['#options'][$theme]);
       unset($form['theme_default']['#options'][$theme]);
     }
