@@ -1,0 +1,6 @@
+IT Services x.x-x.x, xxxx-xx-xx3
+-------------------------------
+
+IT Services 6.x-1.0, 2011-10-03
+-------------------------------
+#1 by mrmarco: Updated department theme names

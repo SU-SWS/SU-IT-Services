@@ -3,4 +3,4 @@ name = Stanford University IT Services
 description = Miscellaneous functions to make the hosting service easier to use and manage.
 package = Stanford
 core = "6.x"
-
+version = "6.x-1.0"

@@ -31,7 +31,7 @@ if ($form_id == 'system_file_system_settings') {
     // are released, or older ones are retired, there is only one place that needs to be
     // updated.
 
-    $department_themes = array('stanford', 'stanford-admin');
+    $department_themes = array('stanfordmodern');
 
     // Disable the enable and default buttons for each department theme
     foreach ($department_themes as $theme) {
