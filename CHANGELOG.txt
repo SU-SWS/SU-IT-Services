@@ -1,5 +1,10 @@
-IT Services x.x-x.x, xxxx-xx-xx3
+IT Services x.x-x.x, xxxx-xx-xx
 -------------------------------
+
+IT Services 6.x-1.1, 2011-10-03
+-------------------------------
+by mrmarco: Added README.txt and LICENSE files
+
 
 IT Services 6.x-1.0, 2011-10-03
 -------------------------------
