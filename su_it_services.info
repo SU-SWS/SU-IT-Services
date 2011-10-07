@@ -4,3 +4,4 @@ description = Miscellaneous functions to make the hosting service easier to use 
 package = Stanford
 core = "6.x"
 version = "6.x-1.1"
+hidden = TRUE
