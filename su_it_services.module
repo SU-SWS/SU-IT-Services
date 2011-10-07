@@ -8,7 +8,7 @@
 function su_it_services_form_alter(&$form, $form_state, $form_id) {
 
   // Once enabled this module cannot be disabled (unless you get to the database or use Drush)
-  // This is done through the .info file. Unfortunately, these causes errors with Drush
+  // This is done through the .info file. Unfortunately, this causes errors with Drush
   // This code attempts to help by adding the option back if called through the cli
 
   if (($form_id == 'system_modules') && (php_sapi_name() == 'cli')) {
