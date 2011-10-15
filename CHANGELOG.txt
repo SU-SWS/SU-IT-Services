@@ -1,6 +1,11 @@
 IT Services x.x-x.x, xxxx-xx-xx
 -------------------------------
 
+IT Services 6.x-1.2, 2011-10-14
+-------------------------------
+by mrmarco: incremented version for repackaging purposes
+
+
 IT Services 6.x-1.1, 2011-10-03
 -------------------------------
 by mrmarco: Added README.txt and LICENSE files
