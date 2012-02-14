@@ -18,20 +18,20 @@ function su_it_services_form_alter(&$form, $form_state, $form_id) {
   // Disable file directory path and temp directory changes. These are set during installation
   // and should not be changed.
 
-if ($form_id == 'system_file_system_settings') {
+  if ($form_id == 'system_file_system_settings') {
     unset($form['file_directory_path']);
     unset($form['file_directory_temp']);
   }
 
-  // only act if this is the theme page and department themes are disabled
+  // We store the department names here instead of the database so that when new themes
+  // are released, or older ones are retired, there is only one place that needs to be
+  // updated.
+
+  $department_themes = array('stanfordmodern');
+
+  // act if this is the theme page and department themes are disabled
 
   if (($form_id == 'system_themes_form') && !(variable_get('su_department_themes', 0))) {
-
-    // We store the department names here instead of the database so that when new themes
-    // are released, or older ones are retired, there is only one place that needs to be
-    // updated.
-
-    $department_themes = array('stanfordmodern');
 
     // Disable the enable and default buttons for each department theme
     foreach ($department_themes as $theme) {
@@ -39,5 +39,14 @@ if ($form_id == 'system_file_system_settings') {
       unset($form['theme_default']['#options'][$theme]);
     }
   }
-}
 
+  // act if this is the admin theme page and department themes are disabled
+
+  if (($form_id == 'system_admin_theme_settings') && !(variable_get('su_department_themes', 0))) {
+
+    // Remove the department theme as an option for the administration theme
+    foreach ($department_themes as $theme) {
+      unset($form['admin_theme']['#options'][$theme]);
+    }
+  }
+}
