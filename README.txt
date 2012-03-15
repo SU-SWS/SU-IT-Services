@@ -2,7 +2,7 @@ IT Services module for sites.stanford.edu
 
 -- SUMMARY -- 
 
-Authors: Marco Wise
+Authors: Marco Wise, John Bickar
 
 This module implements a few functions to make maintenance of Stanford's Drupal
 hosting environment (sites.stanford.edu) easier, including the ability to

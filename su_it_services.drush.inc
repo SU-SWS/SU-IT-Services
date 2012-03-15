@@ -7,22 +7,26 @@
  *
  */
 
+/**
+ * @todo Please document this function.
+ * @see http://drupal.org/node/1354
+ */
 function su_it_services_drush_command() {
   $items = array();
 
   $items['dt-enable'] = array(
     'description' => "Enable Department Themes.",
-    'bootstrap'   => DRUSH_BOOTSTRAP_DRUPAL_DATABASE,
+    'bootstrap' => DRUSH_BOOTSTRAP_DRUPAL_DATABASE,
   );
 
   $items['dt-disable'] = array(
     'description' => "Disable Department Themes.",
-    'bootstrap'   => DRUSH_BOOTSTRAP_DRUPAL_DATABASE,
+    'bootstrap' => DRUSH_BOOTSTRAP_DRUPAL_DATABASE,
   );
 
   $items['dt-status'] = array(
     'description' => "Show whether Department Themes are enabled or not",
-    'bootstrap'   => DRUSH_BOOTSTRAP_DRUPAL_DATABASE,
+    'bootstrap' => DRUSH_BOOTSTRAP_DRUPAL_DATABASE,
   );
 
   return $items;
@@ -44,5 +48,5 @@ function drush_su_it_services_dt_status() {
   }
   else {
     drush_log('Department Themes are currently disabled.', 'status');
-  };
+  }
 }
