@@ -18,8 +18,9 @@ function su_it_services_form_alter(&$form, $form_state, $form_id) {
   // and should not be changed.
 
   if ($form_id == 'system_file_system_settings') {
-    unset($form['file_directory_path']);
-    unset($form['file_directory_temp']);
+    unset($form['file_public_path']);
+    unset($form['file_private_path']);
+    unset($form['file_temporary_path']);
   }
 
   // We store the department names here instead of the database so that when new themes
