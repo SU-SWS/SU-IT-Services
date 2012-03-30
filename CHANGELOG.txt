@@ -1,4 +1,6 @@
-IT Services x.x-x.x, xxxx-xx-xx
+SU IT Services x.x-x.x, xxxx-xx-xx
 -------------------------------
 
-
+SU IT Services 7.x-1.0-alpha1, 2012-03-29
+-----------------------------------------
+Initial port of module to Drupal 7
