@@ -31,7 +31,11 @@ function su_it_services_form_alter(&$form, $form_state, $form_id) {
 
   // act if this is the theme page and department themes are disabled
 
-  if (($form_id == 'system_themes_form') && !(variable_get('su_department_themes', 0))) {
+/*
+ * Department Themes
+ * We will have to implement this differently, due to the way that D7 handles themes
+ */
+/*  if (($form_id == 'system_themes_admin_form') && !(variable_get('su_department_themes', 0))) {
 
     // Disable the enable and default buttons for each department theme
     foreach ($department_themes as $theme) {
@@ -48,5 +52,5 @@ function su_it_services_form_alter(&$form, $form_state, $form_id) {
     foreach ($department_themes as $theme) {
       unset($form['admin_theme']['#options'][$theme]);
     }
-  }
+  }*/
 }
