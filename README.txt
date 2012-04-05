@@ -1,4 +1,5 @@
-IT Services module for sites.stanford.edu
+Stanford Sites System Tools
+(Formerly SU IT Services module)
 
 -- SUMMARY -- 
 
@@ -10,8 +11,6 @@ themes restricted to official departments and groups by University Communication
 
 * the module cannot be disabled using the UI
 * stops users from updating their uploads and /tmp directory
-* stops users from enabling official themes unless they are entitled to them
-* implements drush commands for enabling/disabling official themes
 
 For a full description of the module, visit the project page:
   https://github.com/SU-SWS/SU-IT-Services/
@@ -30,8 +29,6 @@ None.
 -- INSTALLATION --
 
 The module is installed and enabled by default on sites.stanford.edu.
-For department installs, the profile needs to run the following:
-  variable_set('su_department_themes', 1);
 
 -- UPGRADE --
 
@@ -39,14 +36,4 @@ N/A
 
 -- CONFIGURATION --
 
-The module isn't configured through the UI, but through drush.
-The following commands are available:
-
-dt-enable 
-dt-disable 
-dt-status 
-
-(dt stands for department themes) 
-
-Allowing the enabling themes should be done for departments and
-official groups as designated by University Communications.
+N/A

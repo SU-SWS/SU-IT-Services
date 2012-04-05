@@ -1,5 +1,12 @@
-SU IT Services x.x-x.x, xxxx-xx-xx
--------------------------------
+Stanford Sites System Tools x.x-x.x, xxxx-xx-xx
+-----------------------------------------------
+
+Stanford Sites System Tools 7.x-1.0-alpha2, 2012-04-05
+------------------------------------------------------
+-changed name of module to stanford_sites_systemtools
+-removed all department theme logic; will be handled by drush
+  -removed .install file
+  -removed .drush.inc file
 
 SU IT Services 7.x-1.0-alpha1, 2012-03-29
 -----------------------------------------

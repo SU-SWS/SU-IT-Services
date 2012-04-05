@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * Implements hook_form_alter().
+ *
+ */
+
+function stanford_sites_systemtools_form_alter(&$form, $form_state, $form_id) {
+
+  // Once enabled this module cannot be disabled (unless you get to the database or use Drush)
+  // So evil.
+  // Drush is run through the cli so we don't act if that's the interface being used
+  if (($form_id == 'system_modules') &&   (php_sapi_name() != 'cli')) {
+    unset($form['modules']['Stanford']['stanford_sites_systemtools']['enable']);
+  }
+
+  // Disable file directory path and temp directory changes. These are set during installation
+  // and should not be changed.
+
+  if ($form_id == 'system_file_system_settings') {
+    unset($form['file_public_path']);
+    unset($form['file_private_path']);
+    unset($form['file_temporary_path']);
+  }
+}
