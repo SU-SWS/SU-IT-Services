@@ -1,6 +1,10 @@
 Stanford Sites System Tools x.x-x.x, xxxx-xx-xx
 -----------------------------------------------
 
+Stanford Sites System Tools 7.x-1.0-alpha3, 2012-04-13
+------------------------------------------------------
+-no functional changes, just fixing a version labeling mismatch
+
 Stanford Sites System Tools 7.x-1.0-alpha2, 2012-04-05
 ------------------------------------------------------
 -changed name of module to stanford_sites_systemtools
