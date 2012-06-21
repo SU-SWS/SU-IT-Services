@@ -1,6 +1,13 @@
 Stanford Sites System Tools x.x-x.x, xxxx-xx-xx
 -----------------------------------------------
 
+Stanford Sites System Tools 7.x-1.0-alpha4, 2012-06-21
+------------------------------------------------------
+changes since -alpha3:
+  -removed the ability to enable the Update Status module 
+    (preventing users from downloading/updating modules via the UI)
+  -bug fix for error message when changing from public to private file handling
+
 Stanford Sites System Tools 7.x-1.0-alpha3, 2012-04-13
 ------------------------------------------------------
 -no functional changes, just fixing a version labeling mismatch
