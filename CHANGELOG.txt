@@ -1,6 +1,11 @@
 Stanford Sites System Tools x.x-x.x, xxxx-xx-xx
 -----------------------------------------------
 
+Stanford Sites System Tools 7.x-1.0-alpha5, 2012-07-05
+------------------------------------------------------
+changes since -alpha5:
+  -fixed "undefined index" error message when enabling modules with dependencies
+
 Stanford Sites System Tools 7.x-1.0-alpha4, 2012-06-21
 ------------------------------------------------------
 changes since -alpha3:
