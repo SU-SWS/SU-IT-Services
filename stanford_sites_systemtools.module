@@ -6,15 +6,15 @@
  */
 
 function stanford_sites_systemtools_form_alter(&$form, $form_state, $form_id) {
-
   // Once enabled this module cannot be disabled (unless you get to the database or use Drush)
   // So evil.
   // Drush is run through the cli so we don't act if that's the interface being used
   if (($form_id == 'system_modules') &&   (php_sapi_name() != 'cli')) {
     unset($form['modules']['Stanford']['stanford_sites_systemtools']['enable']);
     unset($form['modules']['Core']['update']['enable']);
-    $form['modules']['Core']['update']['description']['#markup'] .= t(' <strong>This module cannot be enabled in the Stanford Sites environment</strong>.');
-    //kpr($form);
+    if(!empty($form['modules']['Core']['update']['description']['#markup'])) {
+      $form['modules']['Core']['update']['description']['#markup'] .= t(' <strong>This module cannot be enabled in the Stanford Sites environment</strong>.');
+    }
   }
 
   // Disable file directory path and temp directory changes. These are set during installation
