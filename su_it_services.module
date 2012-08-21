@@ -49,4 +49,20 @@ function su_it_services_form_alter(&$form, $form_state, $form_id) {
       unset($form['admin_theme']['#options'][$theme]);
     }
   }
+  // Add validation function to Backup and Migrate destinations form
+  if ($form_id == 'backup_migrate_crud_edit_form') {
+    $form['#validate'][] = 'stanford_sites_systemtools_bam_validate';
+  }
+}
+
+/*
+ * Blocks users from creating a destination directory outside of their
+ * Drupal directory.
+ */
+function stanford_sites_systemtools_bam_validate($form, &$form_state) {
+  $location = $form_state['values']['location'];
+  $directory_is_above = preg_match('/^\./', $location, $matches);
+  if ($directory_is_above == 1) {
+    form_set_error('location', t('You may not choose a destination directory outside of your Drupal directory on Stanford Sites.'));
+  }
 }
