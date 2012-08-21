@@ -11,6 +11,8 @@ themes restricted to official departments and groups by University Communication
 
 * the module cannot be disabled using the UI
 * stops users from updating their uploads and /tmp directory
+* prevents users from choosing a Backup and Migrate destination outside of their
+Drupal directory
 
 For a full description of the module, visit the project page:
   https://github.com/SU-SWS/SU-IT-Services/

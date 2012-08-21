@@ -1,6 +1,11 @@
 Stanford Sites System Tools x.x-x.x, xxxx-xx-xx
 -----------------------------------------------
 
+Stanford Sites System Tools 7.x-1.0-beta1, 2012-08-21
+-----------------------------------------------------
+by jbickar: prevent users from choosing a Backup and Migrate destination outside
+  of Drupal directory
+
 Stanford Sites System Tools 7.x-1.0-alpha5, 2012-07-05
 ------------------------------------------------------
 changes since -alpha5:
