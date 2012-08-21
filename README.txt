@@ -12,6 +12,7 @@ themes restricted to official departments and groups by University Communication
 * stops users from updating their uploads and /tmp directory
 * stops users from enabling official themes unless they are entitled to them
 * implements drush commands for enabling/disabling official themes
+* prevents users from choosing a Backup and Migrate destination outside of their Drupal directory
 
 For a full description of the module, visit the project page:
   https://github.com/SU-SWS/SU-IT-Services/
