@@ -51,7 +51,7 @@ function su_it_services_form_alter(&$form, $form_state, $form_id) {
   }
   // Add validation function to Backup and Migrate destinations form
   if ($form_id == 'backup_migrate_crud_edit_form') {
-    $form['#validate'][] = 'stanford_sites_systemtools_bam_validate';
+    $form['#validate'][] = 'su_it_services_bam_validate';
   }
 }
 
@@ -59,10 +59,14 @@ function su_it_services_form_alter(&$form, $form_state, $form_id) {
  * Blocks users from creating a destination directory outside of their
  * Drupal directory.
  */
-function stanford_sites_systemtools_bam_validate($form, &$form_state) {
+function su_it_services_bam_validate($form, &$form_state) {
   $location = $form_state['values']['location'];
-  $directory_is_above = preg_match('/^\./', $location, $matches);
+  $directory_is_above = preg_match('/^\./', $location);
   if ($directory_is_above == 1) {
-    form_set_error('location', t('You may not choose a destination directory outside of your Drupal directory on Stanford Sites.'));
+    form_set_error('location', t('You may not choose a destination outside of your Drupal directory.'));
+  }
+  $directory_is_absolute = preg_match('/^\//', $location);
+  if ($directory_is_absolute == 1) {
+    form_set_error('location', t('You must enter a relative path for your destination directory.'));
   }
 }
