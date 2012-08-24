@@ -1,6 +1,6 @@
 ; $Id: su_it_services.info
 name = Stanford University IT Services
-description = Miscellaneous functions to make the hosting service easier to use and manage.
+description = Miscellaneous functions to make the Stanford Sites hosting service easier to use and manage. This module cannot be disabled.
 package = Stanford
 core = "6.x"
-version = "6.x-1.4"
+version = "6.x-1.5"

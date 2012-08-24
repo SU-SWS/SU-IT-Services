@@ -1,7 +1,11 @@
 IT Services x.x-x.x, xxxx-xx-xx
 -------------------------------
 
-IT Services 6.x-1.3, 2012-08-21
+IT Services 6.x-1.5, 2012-08-24
+-------------------------------
+by mrmarco: additional check for Backup and Migrate destination
+
+IT Services 6.x-1.4, 2012-08-21
 -------------------------------
 by jbickar: prevent users from choosing Backup and Migrate destination outside
   of Drupal directory
