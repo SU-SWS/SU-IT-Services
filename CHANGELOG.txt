@@ -1,6 +1,11 @@
 Stanford Sites System Tools x.x-x.x, xxxx-xx-xx
 -----------------------------------------------
 
+Stanford Sites System Tools 7.x-1.1-beta1, 2013-03-28
+-----------------------------------------------------
+by jbickar: change order in which the form_alter runs on the admin/modules page, so that modules
+  such as module_filter do not override our alter
+
 Stanford Sites System Tools 7.x-1.0-beta2, 2012-09-10
 -----------------------------------------------------
 by mrmarco: Added additional checks for Backup and Migrate destinations
