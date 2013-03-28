@@ -5,7 +5,7 @@
  *
  */
 
-function stanford_sites_systemtools_form_alter(&$form, $form_state, $form_id) {
+function stanford_sites_systemtools_form_system_modules_alter(&$form, $form_state, $form_id) {
   // Once enabled this module cannot be disabled (unless you get to the database or use Drush)
   // So evil.
   // Drush is run through the cli so we don't act if that's the interface being used
@@ -49,5 +49,16 @@ function stanford_sites_systemtools_bam_validate($form, &$form_state) {
   $directory_has_dots = preg_match('/\.\./', $location);
   if ($directory_has_dots == 1) {
     form_set_error('location', t('You must enter a relative path for your destination directory.'));
+  }
+}
+
+/**
+ * Implements hook_module_implements_alter().
+ */
+function stanford_sites_systemtools_module_implements_alter(&$implementations, $hook) {
+  if($hook == "form_alter") {
+    unset($implementations['stanford_sites_systemtools']);
+    $implementations_new = array('stanford_sites_systemtools' => FALSE);
+    $implementations = array_merge($implementations_new, $implementations);
   }
 }
