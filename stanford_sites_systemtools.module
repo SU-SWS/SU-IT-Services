@@ -1,8 +1,7 @@
 <?php
 
 /**
- * Implements hook_form_alter().
- *
+ * Implements hook_form_FORM_ID_alter().
  */
 
 function stanford_sites_systemtools_form_system_modules_alter(&$form, $form_state, $form_id) {
