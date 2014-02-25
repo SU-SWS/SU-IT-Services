@@ -3,7 +3,17 @@
 /**
  * Implements hook_form_FORM_ID_alter().
  */
+function stanford_sites_systemtools_form_features_export_form_alter(&$form, &$form_state, $form_id) {
+  // allow this only if stanford_sites_allow_features_generate = TRUE
+  if(!variable_get('stanford_sites_allow_features_generate')) {
+    unset($form['advanced']['generate_path']);
+    unset($form['advanced']['generate']);
+  }
+}
 
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
 function stanford_sites_systemtools_form_system_modules_alter(&$form, $form_state, $form_id) {
   // Once enabled this module cannot be disabled (unless you get to the database or use Drush)
   // So evil.
