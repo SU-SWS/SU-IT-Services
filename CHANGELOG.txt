@@ -1,6 +1,12 @@
 Stanford Sites System Tools x.x-x.x, xxxx-xx-xx
 -----------------------------------------------
 
+Stanford Sites System Tools 7.x-1.1, 2014-03-31
+-----------------------------------------------
+by jbickar:
+  -Block users from saving Features directly to disk
+  -Do not allow PHP module to be enabled
+
 Stanford Sites System Tools 7.x-1.1-beta1, 2013-03-28
 -----------------------------------------------------
 by jbickar: change order in which the form_alter runs on the admin/modules page, so that modules
