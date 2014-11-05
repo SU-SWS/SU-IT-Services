@@ -20,6 +20,10 @@ function stanford_sites_systemtools_form_system_modules_alter(&$form, $form_stat
   // Drush is run through the cli so we don't act if that's the interface being used
   if (($form_id == 'system_modules') &&   (php_sapi_name() != 'cli')) {
     unset($form['modules']['Stanford']['stanford_sites_systemtools']['enable']);
+    unset($form['modules']['Administration']['erus']['enable']);
+    if(!empty($form['modules']['Administration']['erus']['description']['#markup'])) {
+      $form['modules']['Core']['php']['description']['#markup'] .= t(' <strong>This module cannot be enabled in the Stanford Sites environment</strong>.');
+    }
     unset($form['modules']['Core']['php']['enable']);
     if(!empty($form['modules']['Core']['php']['description']['#markup'])) {
       $form['modules']['Core']['php']['description']['#markup'] .= t(' <strong>This module cannot be enabled in the Stanford Sites environment</strong>.');
@@ -38,7 +42,7 @@ function stanford_sites_systemtools_form_system_modules_alter(&$form, $form_stat
     $form['file_private_path']['#access'] = FALSE;
     $form['file_temporary_path']['#access'] = FALSE;
   }
-  
+
   // Add validation function to Backup and Migrate destinations form
   if ($form_id == 'backup_migrate_crud_edit_form') {
     $form['#validate'][] = 'stanford_sites_systemtools_bam_validate';
