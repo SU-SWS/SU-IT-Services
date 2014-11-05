@@ -22,7 +22,7 @@ function stanford_sites_systemtools_form_system_modules_alter(&$form, $form_stat
     unset($form['modules']['Stanford']['stanford_sites_systemtools']['enable']);
     unset($form['modules']['Administration']['erus']['enable']);
     if(!empty($form['modules']['Administration']['erus']['description']['#markup'])) {
-      $form['modules']['Core']['php']['description']['#markup'] .= t(' <strong>This module cannot be enabled in the Stanford Sites environment</strong>.');
+      $form['modules']['Administration']['erus']['description']['#markup'] .= t(' <strong>This module cannot be enabled in the Stanford Sites environment</strong>.');
     }
     unset($form['modules']['Core']['php']['enable']);
     if(!empty($form['modules']['Core']['php']['description']['#markup'])) {
