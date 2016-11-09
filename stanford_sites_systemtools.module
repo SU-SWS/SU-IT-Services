@@ -1,6 +1,26 @@
 <?php
 
 /**
+ * @file
+ * Code for the Stanford Sites System Tools module.
+ */
+
+/**
+ * Implements hook_boot().
+ *
+ * Set the appname for NewRelic.
+ */
+function stanford_sites_systemtools_boot() {
+  if (function_exists('newrelic_set_appname')) {
+    $appname = check_plain(getcwd());
+    $appname = preg_replace('/\/var\/www\//', "", $appname);
+    $appname = preg_replace('/\/public_html/', "", $appname);
+    newrelic_set_appname($appname);
+    variable_set('stanford_newrelic_appname', $appname);
+  }
+}
+
+/**
  * Implements hook_form_FORM_ID_alter().
  */
 function stanford_sites_systemtools_form_features_export_form_alter(&$form, &$form_state, $form_id) {
