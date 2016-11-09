@@ -12,8 +12,8 @@
 function stanford_sites_systemtools_boot() {
   if (function_exists('newrelic_set_appname')) {
     $appname = check_plain(getcwd());
-    $appname = preg_replace('/\/var\/www\//', "",$appname);
-    $appname = preg_replace('/\/public_html\//', "", $appname);
+    $appname = preg_replace('/\/var\/www\//', "", $appname);
+    $appname = preg_replace('/\/public_html/', "", $appname);
     newrelic_set_appname($appname);
     variable_set('stanford_newrelic_appname', $appname);
   }
