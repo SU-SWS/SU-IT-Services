@@ -34,7 +34,7 @@ function stanford_sites_systemtools_form_features_export_form_alter(&$form, &$fo
 /**
  * Implements hook_form_FORM_ID_alter().
  */
-function stanford_sites_systemtools_form_system_modules_alter(&$form, $form_state, $form_id) {
+function stanford_sites_systemtools_form_alter(&$form, $form_state, $form_id) {
   // Once enabled this module cannot be disabled (unless you get to the database or use Drush)
   // So evil.
   // Drush is run through the cli so we don't act if that's the interface being used
