@@ -70,7 +70,7 @@ function stanford_sites_systemtools_bam_validate($form, &$form_state) {
   }
   $directory_has_dots = preg_match('/\.\./', $location);
   if ($directory_has_dots == 1) {
-    form_set_error('location', t('You must enter a relative path for your destination directory.'));
+    form_set_error('location', t('You may not choose a destination outside of your Drupal directory.'));
   }
 }
 
