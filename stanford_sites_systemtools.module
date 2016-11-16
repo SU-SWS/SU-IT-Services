@@ -17,9 +17,9 @@ function stanford_sites_systemtools_form_features_export_form_alter(&$form, &$fo
 }
 
 /**
- * Implements hook_form_FORM_ID_alter().
+ * Implements hook_form_alter().
  */
-function stanford_sites_systemtools_form_system_modules_alter(&$form, $form_state, $form_id) {
+function stanford_sites_systemtools_form_alter(&$form, $form_state, $form_id) {
   // Once enabled this module cannot be disabled (unless you get to the database or use Drush)
   // So evil.
   // Drush is run through the cli so we don't act if that's the interface being used
@@ -70,7 +70,7 @@ function stanford_sites_systemtools_bam_validate($form, &$form_state) {
   }
   $directory_has_dots = preg_match('/\.\./', $location);
   if ($directory_has_dots == 1) {
-    form_set_error('location', t('You must enter a relative path for your destination directory.'));
+    form_set_error('location', t('You may not choose a destination outside of your Drupal directory.'));
   }
 }
 
