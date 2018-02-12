@@ -52,6 +52,13 @@ function stanford_sites_systemtools_form_alter(&$form, $form_state, $form_id) {
   if ($form_id == 'backup_migrate_crud_edit_form') {
     $form['#validate'][] = 'stanford_sites_systemtools_bam_validate';
   }
+
+  // Block the user from uploading BAM archives.
+  if ($form_id == "backup_migrate_ui_manual_restore_form") {
+    unset($form['backup_migrate_restore_from_upload']);
+    unset($form['backup_migrate_restore_upload']);
+    $form['backup_migrate_restore_from_saved']['#default_value'] = "saved";
+  }
 }
 
 /*
@@ -71,6 +78,18 @@ function stanford_sites_systemtools_bam_validate($form, &$form_state) {
   $directory_has_dots = preg_match('/\.\./', $location);
   if ($directory_has_dots == 1) {
     form_set_error('location', t('You may not choose a destination outside of your Drupal directory.'));
+  }
+}
+
+/**
+ * Implements hook_help().
+ */
+function stanford_sites_systemtools_help($path, $arg) {
+  switch ($path) {
+    // Replace BAM language about uploading an archive, as we're disallowing that.
+    case BACKUP_MIGRATE_MENU_PATH . '/restore':
+      $help = "Select a Backup and Migrate backup file";
+      return $help;
   }
 }
 
