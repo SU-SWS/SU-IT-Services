@@ -87,6 +87,7 @@ function stanford_sites_systemtools_bam_validate($form, &$form_state) {
  */
 function stanford_sites_systemtools_preprocess_page(&$vars) {
   $path = current_path();
+  // Replace BAM's default help text.
   if ($path == BACKUP_MIGRATE_MENU_PATH . '/restore') {
     $vars['page']['help']['system_help']['#markup'] = "Restore from a Backup and Migrate backup file.";
   }
