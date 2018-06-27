@@ -1,6 +1,10 @@
 Stanford Sites System Tools x.x-x.x, xxxx-xx-xx
 -----------------------------------------------
 
+Stanford Sites System Tools 7.x-1.4, 2018-06-27
+-----------------------------------------------
+- Added composer.json
+
 Stanford Sites System Tools 7.x-1.3, 2016-11-16
 -----------------------------------------------
 - Fixed bug that was allowing incorrect Backup and Migrate destinations and file system paths to be set.
@@ -38,7 +42,7 @@ changes since -alpha5:
 Stanford Sites System Tools 7.x-1.0-alpha4, 2012-06-21
 ------------------------------------------------------
 changes since -alpha3:
-  -removed the ability to enable the Update Status module 
+  -removed the ability to enable the Update Status module
     (preventing users from downloading/updating modules via the UI)
   -bug fix for error message when changing from public to private file handling
 
