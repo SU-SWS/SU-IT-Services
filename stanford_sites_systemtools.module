@@ -25,6 +25,7 @@ function stanford_sites_systemtools_form_alter(&$form, $form_state, $form_id) {
   // Drush is run through the cli so we don't act if that's the interface being used
   if (($form_id == 'system_modules') &&   (php_sapi_name() != 'cli')) {
     unset($form['modules']['Stanford']['stanford_sites_systemtools']['enable']);
+    unset($form['modules']['Stanford']['stanford_sites_helper']['enable']);
     unset($form['modules']['Administration']['erus']['enable']);
     if(!empty($form['modules']['Administration']['erus']['description']['#markup'])) {
       $form['modules']['Administration']['erus']['description']['#markup'] .= t(' <strong>This module cannot be enabled in the Stanford Sites environment</strong>.');
