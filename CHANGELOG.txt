@@ -1,6 +1,10 @@
 Stanford Sites System Tools x.x-x.x, xxxx-xx-xx
 -----------------------------------------------
 
+Stanford Sites System Tools 7.x-1.5, 2019-03-01
+-----------------------------------------------
+- Block Stanford Sites Helper from being disabled
+
 Stanford Sites System Tools 7.x-1.4, 2018-06-27
 -----------------------------------------------
 - Added composer.json
